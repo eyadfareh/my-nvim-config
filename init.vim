@@ -20,7 +20,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'joshdick/onedark.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'williamboman/nvim-lsp-installer'
@@ -28,6 +27,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'junegunn/fzf.vim'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 "theme"
