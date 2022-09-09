@@ -27,8 +27,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'junegunn/fzf.vim'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 "theme"
