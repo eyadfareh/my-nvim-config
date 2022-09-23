@@ -1,6 +1,7 @@
 set number 
 "2 width tabs"
 set autoindent
+filetype plugin indent on
 set noexpandtab
 set tabstop=2
 set shiftwidth=2
@@ -24,6 +25,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'junegunn/fzf.vim'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
@@ -36,7 +38,5 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :Ag<CR>
 
-
-
-
+let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 
