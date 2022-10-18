@@ -21,6 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'joshdick/onedark.vim'
+Plug 'aquach/vim-http-client'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'neovim/nvim-lspconfig'
