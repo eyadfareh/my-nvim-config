@@ -9,8 +9,11 @@ require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   use 'joshdick/onedark.vim'
   use 'aquach/vim-http-client'
-  use 'sheerun/vim-polyglot'
   use 'junegunn/fzf.vim'
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate'
+	}
   use 'alvan/vim-closetag'
   use 'mattn/emmet-vim'
   use 'ryanoasis/vim-devicons'
