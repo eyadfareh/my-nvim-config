@@ -23,13 +23,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'joshdick/onedark.vim'
 Plug 'aquach/vim-http-client'
 Plug 'sheerun/vim-polyglot'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'neovim/nvim-lspconfig'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim'
-Plug 'Exafunction/codeium.vim'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
 Plug 'ryanoasis/vim-devicons'
@@ -39,8 +37,7 @@ colorscheme onedark
 "shortcuts"
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :Telescope live_grep<CR>
-nnoremap <C-e> :Telescope find_files<CR>
+nnoremap <C-f> :Ag<CR>
 
 let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 
