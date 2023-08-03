@@ -32,6 +32,8 @@ require("lazy").setup({
   -- multiple cursors
   'mg979/vim-visual-multi',
 
+  -- for navigation
+  'ThePrimeagen/harpoon',
   
   -- an interactive theorem proving interface for coq
   'whonore/Coqtail',
@@ -53,6 +55,15 @@ require("lazy").setup({
   -- debugger
   'puremourning/vimspector',
 
+  -- statusline
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies= {
+      'nvim-tree/nvim-web-devicons'
+    }
+  },
+
+
   -- theme 
   {
     -- Theme inspired by Atom
@@ -60,5 +71,5 @@ require("lazy").setup({
     config = function ()
       vim.cmd("colorscheme onedark")
     end
-  }
+  },
 })
