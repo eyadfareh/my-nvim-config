@@ -1,5 +1,5 @@
 local function coq_next()
-	vim.cmd("CoqNext")	
+	vim.cmd("CoqNext")
 	vim.cmd("set timeoutlen=25")
 end
 local function coq_prev()

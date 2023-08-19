@@ -1,5 +1,5 @@
 vim.cmd([[
-set number 
+set number
 "2 width tabs"
 set autoindent
 filetype plugin indent on
@@ -17,5 +17,5 @@ let g:user_emmet_leader_key='<C-X>'
 vnoremap < <gv
 vnoremap > >gv
 "theme"
-"colorscheme onedark"
 ]])
+vim.cmd("colorscheme tokyonight-storm")

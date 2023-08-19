@@ -1,6 +1,6 @@
 
-require'barbar'.setup {
-	icons = {
-    button = 'x'
-	}
-}
+--require'barbar'.setup {
+--	icons = {
+--    button = 'x'
+--	}
+-- }

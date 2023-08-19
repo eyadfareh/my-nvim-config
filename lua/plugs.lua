@@ -1,45 +1,96 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup({
+return require('packer').startup(function(use)
+	-- packer itself
+	use 'wbthomason/packer.nvim'
+  -- themes
+  use {
+    -- Theme inspired by Atom
+    'navarasu/onedark.nvim',
+  }
+  use 'folke/tokyonight.nvim'
+  use 'liuchengxu/space-vim-dark'
+  use 'sts10/vim-pink-moon'
+  use 'rigellute/shades-of-purple.vim'
 
   -- telescope
-  'nvim-telescope/telescope.nvim',
-  'nvim-lua/plenary.nvim',
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-lua/plenary.nvim'
 
   -- syntax highlighting
-  'sheerun/vim-polyglot',
-
-  -- comment/uncomment automatically
-  'numToStr/Comment.nvim',
+  use 'sheerun/vim-polyglot'
 
   -- to respect camelCase and snake_case
-  'chaoren/vim-wordmotion',
+  use 'chaoren/vim-wordmotion'
 
   -- multiple cursors
-  'mg979/vim-visual-multi',
+  use 'mg979/vim-visual-multi'
 
   -- a file browser inside telescope
-  'nvim-telescope/telescope-file-browser.nvim',
+  use 'nvim-telescope/telescope-file-browser.nvim'
 
   -- view trailing whitespaces
-  'ntpeters/vim-better-whitespace',
+  use 'ntpeters/vim-better-whitespace'
+
+  -- git integration
+  use {
+    "NeogitOrg/neogit",
+    requires = {
+      "nvim-lua/plenary.nvim",         -- required
+      "nvim-telescope/telescope.nvim", -- optional
+      "sindrets/diffview.nvim",        -- optional
+    },
+  }
+  -- http rest client
+  use {
+    "rest-nvim/rest.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("rest-nvim").setup({
+        -- Open request results in a horizontal split
+        result_split_horizontal = false,
+        -- Keep the http file buffer above|left when split horizontal|vertical
+        result_split_in_place = false,
+        -- Skip SSL verification, useful for unknown certificates
+        skip_ssl_verification = false,
+        -- Encode URL before making request
+        encode_url = true,
+        -- Highlight request on run
+        highlight = {
+          enabled = true,
+          timeout = 150,
+        },
+        result = {
+          -- toggle showing URL, HTTP info, headers at top the of result window
+          show_url = true,
+          -- show the generated curl command in case you want to launch
+          -- the same request via the terminal (can be verbose)
+          show_curl_command = false,
+          show_http_info = true,
+          show_headers = true,
+          -- executables or functions for formatting response body [optional]
+          -- set them to false if you want to disable them
+          formatters = {
+            json = "jq",
+            html = function(body)
+              return vim.fn.system({"tidy", "-i", "-q", "-"}, body)
+            end
+          },
+        },
+        -- Jump to request line on run
+        jump_to_request = false,
+        env_file = '.env',
+        custom_dynamic_variables = {},
+        yank_dry_run = true,
+      })
+    end
+  }
+
+
 
   -- lsp
-   {
+   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
-	  dependencies = {
+	  requires = {
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},
 		  {'williamboman/mason.nvim'},
@@ -57,29 +108,26 @@ require("lazy").setup({
 		  {'L3MON4D3/LuaSnip'},
 		  {'rafamadriz/friendly-snippets'},
 	  }
-  },
+  }
 
   -- displays possible keybindings of the command
-  {
+  use {
     "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
+    config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-    end,
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  },
-  -- my own plugin
-  { dir= '~/projects/scholar.nvim'},
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
 
-  {'romgrk/barbar.nvim',
+  use {'romgrk/barbar.nvim',
     dependencies = {
       'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     },
     init = function() vim.g.barbar_auto_setup = false end,
     opts = {
@@ -89,63 +137,57 @@ require("lazy").setup({
       -- …etc.
     },
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
-  },
+  }
 
   -- file tree
-  {
+  use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
-    dependencies = {
+    requires = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     }
-  },
+  }
   -- an interactive theorem proving interface for coq
-  'whonore/Coqtail',
+  use 'whonore/Coqtail'
 
   -- go support
-  {
+  use {
     "ray-x/go.nvim",
     dependencies = {  -- optional packages
       "ray-x/guihua.lua",
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
     },
-    config = function()
+    run = function()
       require("go").setup()
     end,
     event = {"CmdlineEnter"},
     ft = {"go", 'gomod'},
     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
-  },
+  }
 
+  -- tree-sitter
+  use 'nvim-treesitter/nvim-treesitter'
   -- tree-sitter-context
-  {
+  use {
     'nvim-treesitter/nvim-treesitter-context',
     dependencies= {
       "nvim-treesitter/nvim-treesitter"
     }
-  },
+  }
 
   -- debugger
-  'puremourning/vimspector',
+  use 'puremourning/vimspector'
 
   -- statusline
-  {
+  use {
     'nvim-lualine/lualine.nvim',
     dependencies= {
       'nvim-tree/nvim-web-devicons'
     }
-  },
+  }
 
 
-  -- theme
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    config = function ()
-      vim.cmd("colorscheme onedark")
-    end
-  },
-})
+end)
