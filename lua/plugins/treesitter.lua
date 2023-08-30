@@ -2,6 +2,9 @@
   -- A list of parser names, or "all"
   ensure_installed = { "javascript", "typescript", "c", "lua", "rust", "html"},
 
+  indent = { enable = true },
+
+
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
 
@@ -19,6 +22,9 @@
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  autotag = {
+    enable = true
+  }
 }
 require'treesitter-context'.setup{
   enable = false, -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -35,4 +41,11 @@ require'treesitter-context'.setup{
   on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
 }
 
-
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.dik = {
+  install_info = {
+    url = "~/projects/dik/misc/tree-sitter-dik", -- local path or git repo
+    files = {"src/parser.c"}, -- note that some parsers also require src/scanner.c or src/scanner.cc
+  },
+  filetype = "dik", -- if filetype does not match the parser name
+}

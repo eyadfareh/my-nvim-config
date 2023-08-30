@@ -18,20 +18,24 @@ return require('packer').startup(function(use)
   -- syntax highlighting
   use 'sheerun/vim-polyglot'
 
+  -- 6502 syntax highlighting
+  use 'maxbane/vim-asm_ca65'
   -- to respect camelCase and snake_case
   use 'chaoren/vim-wordmotion'
 
+	-- terminal
+	use {"akinsho/toggleterm.nvim", tag = '*'}
   -- multiple cursors
   use 'mg979/vim-visual-multi'
 
-  -- my own plugin
-  use '~/project/scholar.nvim'
+  -- indentation
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- a file browser inside telescope
   use 'nvim-telescope/telescope-file-browser.nvim'
 
-  -- view trailing whitespaces
-  use 'ntpeters/vim-better-whitespace'
+  -- html auto close and auto rename tags
+  use 'windwp/nvim-ts-autotag'
 
   -- git integration
   use {
@@ -42,7 +46,17 @@ return require('packer').startup(function(use)
       "sindrets/diffview.nvim",        -- optional
     },
   }
-  -- http rest client
+  -- Haskell
+  use {
+    'mrcjkb/haskell-tools.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim', -- Optional
+    },
+    branch = '2.x.x', -- Recommended
+    ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
+  }
+  -- HTTP rest client
   use {
     "rest-nvim/rest.nvim",
     requires = { "nvim-lua/plenary.nvim" },
@@ -86,7 +100,6 @@ return require('packer').startup(function(use)
       })
     end
   }
-
 
 
   -- lsp
