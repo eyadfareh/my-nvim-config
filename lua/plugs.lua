@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
     },
   }
   -- Haskell
+	use 'ndmitchell/ghcid'
   use {
     'mrcjkb/haskell-tools.nvim',
     requires = {
@@ -140,7 +141,7 @@ return require('packer').startup(function(use)
     end
   }
 
-  use 'romgrk/barbar.nvim'
+  -- use 'romgrk/barbar.nvim'
 
   -- file tree
   use {
