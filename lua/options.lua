@@ -26,4 +26,5 @@ augroup filetypedetect
   au BufNewFile,BufRead *.s set ft=asm_ca65
 augroup END
 set list listchars=tab:\ \ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+"vim let g:c_syntax_for_h = 1"
 ]])
