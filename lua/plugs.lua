@@ -31,9 +31,6 @@ return require('packer').startup(function(use)
   -- indentation
   use "lukas-reineke/indent-blankline.nvim"
 
-  -- a file browser inside telescope
-  use 'nvim-telescope/telescope-file-browser.nvim'
-
   -- html auto close and auto rename tags
   use 'windwp/nvim-ts-autotag'
 
@@ -128,7 +125,14 @@ return require('packer').startup(function(use)
   }
 
   -- use 'romgrk/barbar.nvim'
-
+  -- snippet engine
+   use({
+		"L3MON4D3/LuaSnip",
+		
+		tag = "v2.0",
+		
+		run = "make install_jsregexp"
+	})
   -- file tree
   use {
     "nvim-neo-tree/neo-tree.nvim",
