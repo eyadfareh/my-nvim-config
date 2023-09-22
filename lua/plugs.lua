@@ -23,6 +23,10 @@ return require('packer').startup(function(use)
   -- to respect camelCase and snake_case
   use 'chaoren/vim-wordmotion'
 
+	--  auto-closing
+	use {
+		'steelsojka/pears.nvim'
+	}
 	-- terminal
 	use {"akinsho/toggleterm.nvim", tag = '*'}
   -- multiple cursors
@@ -126,13 +130,6 @@ return require('packer').startup(function(use)
 
   -- use 'romgrk/barbar.nvim'
   -- snippet engine
-   use({
-		"L3MON4D3/LuaSnip",
-		
-		tag = "v2.0",
-		
-		run = "make install_jsregexp"
-	})
   -- file tree
   use {
     "nvim-neo-tree/neo-tree.nvim",
