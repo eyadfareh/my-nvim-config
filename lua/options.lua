@@ -23,7 +23,7 @@ setlocal spell spelllang=en_us
 vim.cmd("colorscheme tokyonight-storm")
 vim.cmd([[
 augroup filetypedetect
-  au BufNewFile,BufRead *.asm set ft=nasm
+  au BufNewFile,BufRead *.asm set ft=fasm
 augroup END
 set list listchars=tab:\ \ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 "vim let g:c_syntax_for_h = 1"

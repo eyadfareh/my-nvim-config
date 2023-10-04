@@ -5,13 +5,13 @@ lsp.preset("recommended")
 
 -- Fix Undefined global 'vim'
 lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { 'vim' }
+			}
+		}
+	}
 })
 
 
@@ -61,9 +61,3 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
-
-require("pears").setup(function(conf)
-  conf.pair("{","}")
-  conf.pair("(",")")
-  conf.pair("[","]")
-end) 

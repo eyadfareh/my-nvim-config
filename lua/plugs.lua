@@ -11,22 +11,37 @@ return require('packer').startup(function(use)
   use 'sts10/vim-pink-moon'
   use 'rigellute/shades-of-purple.vim'
 
+	-- Jupyter
+	use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
+
   -- telescope
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-lua/plenary.nvim'
 
   -- syntax highlighting
   use 'sheerun/vim-polyglot'
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end 
+	}
+
+  -- code folding
+	use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   -- 6502 syntax highlighting
   use 'maxbane/vim-asm_ca65'
+	-- fasm syntax highlighting
+	use 'fedorenchik/fasm.vim'
+
+	use {
+		'~/projects/cp_scripts/cf.nvim', 
+		config = function()
+			require("cf")
+		end
+	}
   -- to respect camelCase and snake_case
   use 'chaoren/vim-wordmotion'
 
-	--  auto-closing
-	use {
-		'steelsojka/pears.nvim'
-	}
 	-- terminal
 	use {"akinsho/toggleterm.nvim", tag = '*'}
   -- multiple cursors
@@ -142,6 +157,7 @@ return require('packer').startup(function(use)
   }
   -- an interactive theorem proving interface for coq
   use 'whonore/Coqtail'
+	use 'Julian/lean.nvim'
 
   -- go support
   use {
