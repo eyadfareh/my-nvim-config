@@ -14,12 +14,22 @@ return require('packer').startup(function(use)
 	-- Jupyter
 	use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
 
+	-- typescript
+	use {
+		"pmizio/typescript-tools.nvim",
+		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		config = function()
+			require("typescript-tools").setup {}
+		end,
+	}
+
+
   -- telescope
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-lua/plenary.nvim'
 
   -- syntax highlighting
-  use 'sheerun/vim-polyglot'
+  -- use 'sheerun/vim-polyglot'
   use {
     'glacambre/firenvim',
     run = function() vim.fn['firenvim#install'](0) end 
@@ -37,6 +47,12 @@ return require('packer').startup(function(use)
 		'~/projects/cp_scripts/cf.nvim', 
 		config = function()
 			require("cf")
+		end
+	}
+	use {
+		'~/projects/lox/lox.nvim',
+		config = function()
+			require("lox")
 		end
 	}
   -- to respect camelCase and snake_case

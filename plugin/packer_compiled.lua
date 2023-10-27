@@ -125,6 +125,11 @@ _G.packer_plugins = {
     path = "/home/eyad/.local/share/nvim/site/pack/packer/start/fasm.vim",
     url = "https://github.com/fedorenchik/fasm.vim"
   },
+  firenvim = {
+    loaded = true,
+    path = "/home/eyad/.local/share/nvim/site/pack/packer/start/firenvim",
+    url = "https://github.com/glacambre/firenvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/eyad/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -154,6 +159,17 @@ _G.packer_plugins = {
     path = "/home/eyad/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["lean.nvim"] = {
+    loaded = true,
+    path = "/home/eyad/.local/share/nvim/site/pack/packer/start/lean.nvim",
+    url = "https://github.com/Julian/lean.nvim"
+  },
+  ["lox.nvim"] = {
+    config = { "\27LJ\2\n#\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\blox\frequire\0" },
+    loaded = true,
+    path = "/home/eyad/.local/share/nvim/site/pack/packer/start/lox.nvim",
+    url = "/home/eyad/projects/lox/lox.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/eyad/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -163,6 +179,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eyad/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["magma-nvim"] = {
+    loaded = true,
+    path = "/home/eyad/.local/share/nvim/site/pack/packer/start/magma-nvim",
+    url = "https://github.com/dccsillag/magma-nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -234,11 +255,6 @@ _G.packer_plugins = {
     path = "/home/eyad/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["pears.nvim"] = {
-    loaded = true,
-    path = "/home/eyad/.local/share/nvim/site/pack/packer/start/pears.nvim",
-    url = "https://github.com/steelsojka/pears.nvim"
-  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/eyad/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -250,7 +266,7 @@ _G.packer_plugins = {
     url = "https://github.com/kevinhwang91/promise-async"
   },
   ["rest.nvim"] = {
-    config = { "\27LJ\2\n>\0\1\5\0\4\0\0066\1\0\0009\1\1\0019\1\2\0015\3\3\0\18\4\0\0D\1\3\0\1\5\0\0\ttidy\a-i\a-q\6-\vsystem\afn\bvimÅ\3\1\0\6\0\r\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0005\4\a\0003\5\b\0=\5\t\4=\4\n\3=\3\v\0024\3\0\0=\3\f\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\15formatters\thtml\0\1\0\1\tjson\ajq\1\0\4\17show_headers\2\19show_http_info\2\22show_curl_command\1\rshow_url\2\14highlight\1\0\2\fenabled\2\ftimeout\3ñ\1\1\0\a\26result_split_in_place\1\26skip_ssl_verification\1\17yank_dry_run\2\15encode_url\2\renv_file\t.env\20jump_to_request\1\28result_split_horizontal\1\nsetup\14rest-nvim\frequire\0" },
+    config = { "\27LJ\2\n>\0\1\5\0\4\0\0066\1\0\0009\1\1\0019\1\2\0015\3\3\0\18\4\0\0D\1\3\0\1\5\0\0\ttidy\a-i\a-q\6-\vsystem\afn\bvimÅ\3\1\0\6\0\r\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0005\4\a\0003\5\b\0=\5\t\4=\4\n\3=\3\v\0024\3\0\0=\3\f\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\15formatters\thtml\0\1\0\1\tjson\ajq\1\0\4\19show_http_info\2\22show_curl_command\1\rshow_url\2\17show_headers\2\14highlight\1\0\2\fenabled\2\ftimeout\3ñ\1\1\0\a\20jump_to_request\1\renv_file\t.env\15encode_url\2\26skip_ssl_verification\1\26result_split_in_place\1\28result_split_horizontal\1\17yank_dry_run\2\nsetup\14rest-nvim\frequire\0" },
     loaded = true,
     path = "/home/eyad/.local/share/nvim/site/pack/packer/start/rest.nvim",
     url = "https://github.com/rest-nvim/rest.nvim"
@@ -280,6 +296,12 @@ _G.packer_plugins = {
     path = "/home/eyad/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["typescript-tools.nvim"] = {
+    config = { "\27LJ\2\nB\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\21typescript-tools\frequire\0" },
+    loaded = true,
+    path = "/home/eyad/.local/share/nvim/site/pack/packer/start/typescript-tools.nvim",
+    url = "https://github.com/pmizio/typescript-tools.nvim"
+  },
   ["vim-asm_ca65"] = {
     loaded = true,
     path = "/home/eyad/.local/share/nvim/site/pack/packer/start/vim-asm_ca65",
@@ -289,11 +311,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eyad/.local/share/nvim/site/pack/packer/start/vim-pink-moon",
     url = "https://github.com/sts10/vim-pink-moon"
-  },
-  ["vim-polyglot"] = {
-    loaded = true,
-    path = "/home/eyad/.local/share/nvim/site/pack/packer/start/vim-polyglot",
-    url = "https://github.com/sheerun/vim-polyglot"
   },
   ["vim-visual-multi"] = {
     loaded = true,
@@ -308,24 +325,32 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: rest.nvim
+time([[Config for rest.nvim]], true)
+try_loadstring("\27LJ\2\n>\0\1\5\0\4\0\0066\1\0\0009\1\1\0019\1\2\0015\3\3\0\18\4\0\0D\1\3\0\1\5\0\0\ttidy\a-i\a-q\6-\vsystem\afn\bvimÅ\3\1\0\6\0\r\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0005\4\a\0003\5\b\0=\5\t\4=\4\n\3=\3\v\0024\3\0\0=\3\f\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\15formatters\thtml\0\1\0\1\tjson\ajq\1\0\4\19show_http_info\2\22show_curl_command\1\rshow_url\2\17show_headers\2\14highlight\1\0\2\fenabled\2\ftimeout\3ñ\1\1\0\a\20jump_to_request\1\renv_file\t.env\15encode_url\2\26skip_ssl_verification\1\26result_split_in_place\1\28result_split_horizontal\1\17yank_dry_run\2\nsetup\14rest-nvim\frequire\0", "config", "rest.nvim")
+time([[Config for rest.nvim]], false)
 -- Config for: cf.nvim
 time([[Config for cf.nvim]], true)
 try_loadstring("\27LJ\2\n\"\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\acf\frequire\0", "config", "cf.nvim")
 time([[Config for cf.nvim]], false)
--- Config for: rest.nvim
-time([[Config for rest.nvim]], true)
-try_loadstring("\27LJ\2\n>\0\1\5\0\4\0\0066\1\0\0009\1\1\0019\1\2\0015\3\3\0\18\4\0\0D\1\3\0\1\5\0\0\ttidy\a-i\a-q\6-\vsystem\afn\bvimÅ\3\1\0\6\0\r\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0005\4\a\0003\5\b\0=\5\t\4=\4\n\3=\3\v\0024\3\0\0=\3\f\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\15formatters\thtml\0\1\0\1\tjson\ajq\1\0\4\17show_headers\2\19show_http_info\2\22show_curl_command\1\rshow_url\2\14highlight\1\0\2\fenabled\2\ftimeout\3ñ\1\1\0\a\26result_split_in_place\1\26skip_ssl_verification\1\17yank_dry_run\2\15encode_url\2\renv_file\t.env\20jump_to_request\1\28result_split_horizontal\1\nsetup\14rest-nvim\frequire\0", "config", "rest.nvim")
-time([[Config for rest.nvim]], false)
+-- Config for: lox.nvim
+time([[Config for lox.nvim]], true)
+try_loadstring("\27LJ\2\n#\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\blox\frequire\0", "config", "lox.nvim")
+time([[Config for lox.nvim]], false)
+-- Config for: typescript-tools.nvim
+time([[Config for typescript-tools.nvim]], true)
+try_loadstring("\27LJ\2\nB\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\21typescript-tools\frequire\0", "config", "typescript-tools.nvim")
+time([[Config for typescript-tools.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType cabal ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "cabal" }, _G.packer_plugins)]]
-vim.cmd [[au FileType cabalproject ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "cabalproject" }, _G.packer_plugins)]]
-vim.cmd [[au FileType gomod ++once lua require("packer.load")({'go.nvim'}, { ft = "gomod" }, _G.packer_plugins)]]
 vim.cmd [[au FileType go ++once lua require("packer.load")({'go.nvim'}, { ft = "go" }, _G.packer_plugins)]]
 vim.cmd [[au FileType haskell ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "haskell" }, _G.packer_plugins)]]
 vim.cmd [[au FileType lhaskell ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "lhaskell" }, _G.packer_plugins)]]
+vim.cmd [[au FileType cabal ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "cabal" }, _G.packer_plugins)]]
+vim.cmd [[au FileType cabalproject ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "cabalproject" }, _G.packer_plugins)]]
+vim.cmd [[au FileType gomod ++once lua require("packer.load")({'go.nvim'}, { ft = "gomod" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
